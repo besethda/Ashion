@@ -1,0 +1,18 @@
+.navItem {
+  padding: 8px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.underline {
+  background-color: brown;
+  height: 2px;
+  width: 0;
+  transition: .3s ease-in-out;
+}
+
+.navItem:hover .underline {
+  width: 100%;
+}

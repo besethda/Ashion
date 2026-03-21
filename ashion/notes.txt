@@ -1,0 +1,14 @@
+home, womens, mens, kid, cosmetics, accessories
+
+responsive should have a hamburger menu
+
+header should have a logo, the categories the shopping cart, and a hamburger on mobile
+
+the main content is a grid. on mobile the top covers 2x2 , on desktop the main image is on left covering 2x2
+
+organize the header so that the div with the categories, cart, and logo are in a subdiv, and the logo and hamburger menu are in the parent.
+
+make a component for the grid
+
+
+fonts Montserrat, and one called cookie
