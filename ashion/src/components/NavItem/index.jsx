@@ -1,10 +1,11 @@
 import styles from "./navitem.module.css"
+import { NavLink } from "react-router-dom"
 
 const NavItem = ({name}) => {
   return (
-    <div className={styles.navItem}>{name.toUpperCase()}
-      <div className={styles.underline}></div>
-    </div>
+    <NavLink className={styles.navItem} to={`/category/${name.toLowerCase()}`}>{name.toUpperCase()}
+        <div className={styles.underline}></div>
+    </NavLink>
   )
 }
 

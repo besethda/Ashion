@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import styles from './App.module.css'
-import Header from "./components/Header"
-import Display from "./components/Display"
+import { Routes, Route } from 'react-router-dom'
+import MainLayout from './pages/MainLayout'
+import Home from './pages/Home'
+import Category from './components/Category'
 
 function App() {
 
@@ -15,10 +17,14 @@ function App() {
     ]
 
   return (
-    <div className={styles.container}>
-      <Header categories={categories} />
-      <Display categories={categories} />
-    </div>
+    <>
+    <Routes>
+      <Route element={<MainLayout categories={categories}/>}>
+        <Route path='/' element={<Home categories={categories}/>}/>
+        <Route path='/category/:name' element={<Category categories={categories}/>}/>
+      </Route>
+    </Routes>
+    </>
   )
 }
 
