@@ -6,22 +6,9 @@
   height: 100%;
   width: 100%;
   position: relative;
-}
-
-.imgContainer {
-  z-index: -1;
-  position: absolute;
-  background-color: blue;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.image {
-  object-fit: cover;
-  height: 100%;
-  object-position: 0 ;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .name {

@@ -7,6 +7,8 @@ import Category from './components/Category'
 
 function App() {
 
+    const [cart, setCart] = useState(null)
+
   const categories =
     [
       { name: "Womens", path: "women.jpeg", media: "mobile-image.png" },
@@ -17,14 +19,12 @@ function App() {
     ]
 
   return (
-    <>
     <Routes>
-      <Route element={<MainLayout categories={categories}/>}>
-        <Route path='/' element={<Home categories={categories}/>}/>
-        <Route path='/category/:name' element={<Category categories={categories}/>}/>
-      </Route>
+        <Route element={<MainLayout categories={categories} setCart={setCart}/>}>
+          <Route path='/' element={<Home categories={categories}/>}/>
+          <Route path='/category/:name' element={<Category categories={categories} setCart={setCart}/>}/>
+        </Route>
     </Routes>
-    </>
   )
 }
 
