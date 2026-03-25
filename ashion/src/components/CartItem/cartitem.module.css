@@ -1,0 +1,69 @@
+.container {
+  width: 100%;
+  height: 60px;
+  padding: 5px 10px;
+  font-family: 'Montserrat', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: flex;
+  align-items: center;
+  margin: 6px 0;
+  transition: .18s all;
+}
+
+.container:hover {
+  background-color: rgba(0, 0, 0, 0.059);
+}
+
+.image {
+  height: 100%;
+  aspect-ratio: 3/4;
+
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+  }
+}
+
+.details {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name,
+.remove,
+.price {
+  font-size: 1.2rem;
+  padding: 3px 10px;
+  height: fit-content;
+}
+
+.remove {
+  display: none;
+  border: rgba(0, 0, 0, 0.15) solid 1px;
+  margin-left: 10px;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.242);
+  cursor: pointer;
+  transition: .18s all;
+}
+
+.remove:hover {
+  background-color: rgba(255, 255, 255, 0.43);
+}
+
+.remove:active {
+  background-color: rgba(203, 203, 203, 0.43);
+}
+
+.container:hover .remove {
+  display: flex;
+}
+
+.container:hover .name {
+  display: none;
+}
+

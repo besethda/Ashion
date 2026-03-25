@@ -1,0 +1,66 @@
+.container {
+  width: calc(20% - 17px);
+  border: solid rgba(0, 0, 0, 0.121) 1px;
+  border-radius: 3px;
+  background-color: white;
+  font-family: 'Montserrat', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.image {
+  width: 100%;
+  cursor: pointer;
+  transition: .18s all;
+  border-radius: inherit;
+
+  img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: inherit;
+  }
+}
+
+.image:hover {
+  filter: brightness(90%);
+}
+
+.choices {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 12px;
+}
+
+.name {
+  padding: 10px 12px;
+  padding-top: 3px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: inherit;
+  text-decoration: none;
+}
+
+.price {
+  font-size: 1.6rem;
+  padding: 3px 0;
+}
+
+.addButton {
+  border: 1px solid rgba(0, 0, 0, 0.175);
+  border-radius: 6px;
+  padding: 3px 8px;
+  width: fit-content;
+  transition: .18s all;
+  cursor: pointer;
+}
+
+.addButton:hover {
+  background-color: rgb(221, 240, 255);
+}
+
+.addButton:active {
+  background-color: rgb(215, 215, 215);
+}

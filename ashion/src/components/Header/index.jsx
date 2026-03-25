@@ -1,11 +1,16 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import styles from "./header.module.css"
 import Logo from "../Logo"
 import Nav from "../Nav"
 
-const Header = ({categories }) => {
+const Header = ({categories, setCartDisplay, cartDisplay, cart}) => {
 
     const [navShown, setNavShown] = useState(true)
+    const [cartNumber, setCartNumber] = useState(null)
+
+    useEffect(()=> {
+      setCartNumber(cart.length ? cart.length : null)
+    }, [cart])
 
     const toggleNav = () => {
       setNavShown(!navShown)
@@ -24,7 +29,8 @@ const Header = ({categories }) => {
         <div className={`${styles.container} ${navShown && styles.active}`}>
           <Logo />
           <Nav categories={categories} />
-          <div className={styles.shop}>
+          <div className={styles.shop} onClick={()=>{setCartDisplay(!cartDisplay)}}>
+            {cartNumber && <div className={styles.number}>{cartNumber && cartNumber}</div>}
             <svg fill="#000" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" enableBackground="new 0 0 20 20"><path d="M17 14H4c-.6.0-1-.4-1-1V2H0V0h4c.6.0 1 .4 1 1v11h11.2l1.5-6H7V4h12c.6.0 1.1.6 1 1.2l-2 8C17.9 13.7 17.5 14 17 14z" /><circle cx="5" cy="18" r="2" /><circle cx="16" cy="18" r="2" /></svg>
           </div>
         </div>
