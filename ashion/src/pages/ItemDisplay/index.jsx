@@ -31,7 +31,7 @@ const ItemDisplay = ({setCart}) => {
         <div className={styles.color}>Color: {data && data.color}</div>
       </div>
       <div className={styles.description}>{data && data.description}</div>
-      <div className={styles.addButton} onClick={updateCart}>Add to Cart</div>
+      <div className={styles.addButton} onClick={updateCart}>{cartText}</div>
     </div>
   );
 };
