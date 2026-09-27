@@ -2,9 +2,11 @@ import { Hono } from "hono"
 import { serve } from "@hono/node-server"
 import { cors } from "hono/cors"
 import Database from "better-sqlite3"
+import { fileURLToPath } from "url"
 
 const app = new Hono()
-const db = new Database("database.db")
+const dbPath = fileURLToPath(new URL("./database.db", import.meta.url))
+const db = new Database(dbPath, { readonly: !!process.env.VERCEL })
 
 app.use("/api/*", cors({
   origin: 'http://localhost:5173',
@@ -98,9 +100,12 @@ app.post("/remove-category", async (c) => {
 })
 
 
-serve({
-  fetch: app.fetch,
-  port: 3456
-})
+if (!process.env.VERCEL) {
+  serve({
+    fetch: app.fetch,
+    port: 3456
+  })
+  console.log("Server running on port 3456")
+}
 
-console.log("Server running on port 3456")
+export default app
