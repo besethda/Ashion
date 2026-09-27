@@ -55,10 +55,9 @@ On the live demo the database is read-only, so the POST endpoints only work loca
 
 ## What I learned
 
-- Designing a relational schema with a join table, and querying across it with `JOIN`
-- Building a REST API with Hono and prepared statements
-- Connecting a React frontend to my own backend, and handling CORS during development
-- Structuring a React app with pages, reusable components and a custom hook
+- I learned how to use Hono, which i am very fond of now.
+- This was my first attempt at SQL, so I learned about SQL syntax and how SQLite works.
+- I learned how to make queries to a database, and how the full-stack really works.
 
 ## Running locally
 
