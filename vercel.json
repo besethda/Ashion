@@ -1,0 +1,12 @@
+{
+  "installCommand": "npm ci --prefix ashion && npm ci --prefix ashion_backend",
+  "buildCommand": "npm run build --prefix ashion",
+  "outputDirectory": "ashion/dist",
+  "functions": {
+    "api/index.js": { "includeFiles": "ashion_backend/database.db" }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
